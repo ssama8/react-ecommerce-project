@@ -1,13 +1,13 @@
 import React from "react";
 import styled from "styled-components";
 import logo from "../assets/logo.svg";
+import sportsLogo from "../assets/sportsLogo.svg";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import { links } from "../utils/constants";
 import CartButtons from "./CartButtons";
 import { useProductsContext } from "../context/products_context";
 import { useUserContext } from "../context/user_context";
-
 const Nav = () => {
 	const { myUser } = useUserContext();
 	// console.log(props);
@@ -18,7 +18,7 @@ const Nav = () => {
 			<div className='nav-center'>
 				<div className='nav-header'>
 					<Link to='/'>
-						<img src={logo} alt='comfy-sloth' />
+						<img src={sportsLogo} alt='comfy-sloth' />
 					</Link>
 					<button type='button' className='nav-toggle'>
 						<FaBars onClick={() => openSidebar()} />
@@ -50,7 +50,7 @@ const NavContainer = styled.nav`
 	display: flex;
 	align-items: center;
 	justify-content: center;
-
+	background-color: #555;
 	.nav-center {
 		width: 90vw;
 		margin: 0 auto;
@@ -61,8 +61,10 @@ const NavContainer = styled.nav`
 		align-items: center;
 		justify-content: space-between;
 		img {
-			width: 175px;
+			background-color: #555;
+			// transform: scale(1, 0.4);
 			margin-left: -15px;
+			background-color: green;
 		}
 	}
 	.nav-toggle {
@@ -76,6 +78,13 @@ const NavContainer = styled.nav`
 	}
 	.nav-links {
 		display: none;
+	}
+	.nav-links li a {
+		color: white;
+		font-weight: bold;
+	}
+	.nav-links li a:hover {
+		color: orange;
 	}
 	.cart-btn-wrapper {
 		display: none;

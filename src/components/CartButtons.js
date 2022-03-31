@@ -44,7 +44,6 @@ const Wrapper = styled.div`
 	grid-template-columns: 1fr 1fr;
 	align-items: center;
 	width: 225px;
-
 	.cart-btn {
 		color: var(--clr-grey-1);
 		font-size: 1.5rem;
@@ -58,8 +57,9 @@ const Wrapper = styled.div`
 		display: flex;
 		align-items: center;
 		position: relative;
+		color: #ddd;
 		svg {
-			height: 1.6rem;
+			height: 1.8rem;
 			margin-left: 5px;
 		}
 	}
@@ -85,7 +85,8 @@ const Wrapper = styled.div`
 		border-color: transparent;
 		font-size: 1.5rem;
 		cursor: pointer;
-		color: var(--clr-grey-1);
+		color: white;
+
 		letter-spacing: var(--spacing);
 		svg {
 			margin-left: 5px;

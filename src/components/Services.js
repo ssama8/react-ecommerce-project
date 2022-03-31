@@ -59,9 +59,15 @@ const Wrapper = styled.section`
 		text-align: center;
 		padding: 2.5rem 2rem;
 		border-radius: var(--radius);
+		transition: all 0.5s;
 		p {
 			color: var(--clr-primary-2);
 		}
+	}
+	.service:hover {
+		cursor: pointer;
+		background: var(--clr-primary-5);
+		transform: scale(1.1);
 	}
 	span {
 		width: 4rem;
