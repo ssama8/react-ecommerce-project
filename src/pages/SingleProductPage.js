@@ -13,7 +13,6 @@ import {
 } from "../components";
 import styled from "styled-components";
 import { Link } from "react-router-dom";
-
 const SingleProductPage = () => {
 	const { id } = useParams();
 	const navigate = useNavigate();
@@ -39,8 +38,9 @@ const SingleProductPage = () => {
 		return <Loading />;
 	}
 	if (error) {
-		return <Error />;
+		return <Error error={" Product Not Found"} />;
 	}
+
 	const {
 		name,
 		price,
@@ -50,9 +50,11 @@ const SingleProductPage = () => {
 		reviews,
 		id: sku,
 		company,
-		images,
+		image,
+		colors,
 	} = product;
 	console.log(loading);
+	console.log(colors);
 	return (
 		<Wrapper>
 			<PageHero title={"products"} product={name} />
@@ -61,7 +63,7 @@ const SingleProductPage = () => {
 					back to products
 				</Link>
 				<div className='product-center'>
-					<ProductImages images={images} />
+					<ProductImages image={image} name={name} />
 					<section className='content'>
 						<h2>{name}</h2>
 						<Stars stars={stars} reviews={reviews} />
@@ -99,6 +101,7 @@ const Wrapper = styled.main`
 	.price {
 		color: var(--clr-primary-5);
 	}
+
 	.desc {
 		line-height: 2;
 		max-width: 45em;
@@ -120,6 +123,9 @@ const Wrapper = styled.main`
 		}
 		.price {
 			font-size: 1.25rem;
+		}
+		.btn {
+			margin: 0 auto;
 		}
 	}
 `;

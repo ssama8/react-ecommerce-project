@@ -7,6 +7,7 @@ import AmountButtons from "./AmountButtons";
 
 const AddToCart = (product) => {
 	const { id, stock, colors, current, setCurrent } = product;
+	console.log(colors);
 	const { addToCart } = useCartContext();
 	const [mainColor, setMainColor] = useState(colors[0]);
 	const increase = () => {
@@ -47,6 +48,7 @@ const AddToCart = (product) => {
 				<Link
 					to='/cart'
 					className='btn'
+					id='add'
 					onClick={() => addToCart(id, mainColor, current, product)}>
 					add to cart
 				</Link>
@@ -68,6 +70,13 @@ const Wrapper = styled.section`
 		div {
 			display: flex;
 		}
+	}
+	.btn-container {
+		margin-bottom: 1rem;
+	}
+	#add {
+		margin-top: 1.5rem;
+		width: 140px;
 	}
 	.color-btn {
 		display: inline-block;
@@ -95,7 +104,7 @@ const Wrapper = styled.section`
 	}
 
 	.btn {
-		margin-top: 1rem;
+		margin-top: 2.25rem;
 		width: 140px;
 	}
 `;

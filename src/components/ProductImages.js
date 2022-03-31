@@ -1,27 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 
-const ProductImages = ({ images = [{ url: "" }] }) => {
+const ProductImages = ({ image, name }) => {
 	// if (!images) return <></>;
-	const [main, setMain] = useState(images[0]);
+
 	return (
 		<Wrapper>
-			<img src={main.url} alt='main image' className='main' />
-			<div className='gallery'>
-				{images.map((image, index) => {
-					return (
-						<img
-							src={image.url}
-							alt={image.filename}
-							key={index}
-							className={image.url === main.url ? "active" : null}
-							onClick={() => {
-								setMain(images[index]);
-							}}
-						/>
-					);
-				})}
-			</div>
+			<img src={image} alt={name} className='main' />
 		</Wrapper>
 	);
 };
@@ -34,7 +19,7 @@ const Wrapper = styled.section`
 		width: 100%;
 		display: block;
 		border-radius: var(--radius);
-		object-fit: cover;
+		object-fit: fill;
 	}
 	.gallery {
 		margin-top: 1rem;
