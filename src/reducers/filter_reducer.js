@@ -72,7 +72,7 @@ const filter_reducer = (state, action) => {
 				shipping,
 			} = filtersState;
 			filtered = filtered.filter((product) => {
-				return product.name.indexOf(text) === 0;
+				return product.name.toLowerCase().indexOf(text.toLowerCase()) === 0;
 			});
 			if (category !== "all") {
 				filtered = filtered.filter((product) => {
