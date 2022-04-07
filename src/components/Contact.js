@@ -18,7 +18,10 @@ const Contact = () => {
 							className='form-input'
 							placeholder='enter email'
 						/>
-						<button type='submit' className='submit-btn'>
+						<button
+							type='submit'
+							className='submit-btn'
+							onClick={(e) => e.preventDefault()}>
 							subscribe
 						</button>
 					</form>
