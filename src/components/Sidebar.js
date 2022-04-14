@@ -1,5 +1,4 @@
 import React from "react";
-import logo from "../assets/logo.svg";
 import { Link } from "react-router-dom";
 import { useProductsContext } from "../context/products_context";
 import { FaTimes } from "react-icons/fa";
@@ -7,6 +6,7 @@ import { links } from "../utils/constants";
 import styled from "styled-components";
 import CartButtons from "./CartButtons";
 import { useUserContext } from "../context/user_context";
+import sportsLogo from "../assets/sidebar.svg";
 
 const Sidebar = () => {
 	const { myUser } = useUserContext();
@@ -16,7 +16,7 @@ const Sidebar = () => {
 		<SidebarContainer>
 			<aside className={isSidebarOpen ? "show-sidebar sidebar" : "sidebar"}>
 				<div className='sidebar-header'>
-					<img src={logo} className='logo' alt='comfy sloth' />
+					<h1> Samas Sporting Goods </h1>
 					<button className='close-btn'>
 						<FaTimes onClick={closeSidebar} />
 					</button>
@@ -107,12 +107,25 @@ const SidebarContainer = styled.div`
 		transform: translate(0);
 		z-index: 999;
 	}
+	.sidebar-header {
+		background: #888;
+		h1 {
+			font-size: 1.75rem;
+		}
+	}
 	.cart-btn-wrapper {
 		margin: 2rem auto;
 	}
 	@media screen and (min-width: 992px) {
 		.sidebar {
 			display: none;
+		}
+	}
+	@media screen and (max-width: 500px) {
+		.sidebar-header {
+			h1 {
+				font-size: 1.25rem;
+			}
 		}
 	}
 `;
