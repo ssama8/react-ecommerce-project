@@ -92,7 +92,6 @@ const CheckoutForm = () => {
 			}, 10000);
 		}
 	};
-	// copyToClipboard = (e) => {};
 
 	return (
 		<div>
@@ -115,7 +114,6 @@ const CheckoutForm = () => {
 			{!succeeded && <CartColumns />}
 			{!succeeded &&
 				cart.map((item) => {
-					const { amount, color, image, name, price } = item;
 					return (
 						<CartItem
 							key={item.id}
@@ -148,7 +146,8 @@ const CheckoutForm = () => {
 					Payment succedded, see the result in your
 					<a
 						href={`https://dashboard.stripe.com/test/payments`}
-						target='_blank'>
+						target='_blank'
+						rel='noreferrer'>
 						Stripe dasboard.
 					</a>
 					Refresh the page to pay again
@@ -162,7 +161,6 @@ const CheckoutForm = () => {
 };
 
 const StripeCheckout = () => {
-	const { cart } = useCartContext();
 	return (
 		<Wrapper className='checkout-section'>
 			{/* <CartContent /> */}

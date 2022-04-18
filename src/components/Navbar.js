@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-import logo from "../assets/logo.svg";
 import sportsLogo from "../assets/sportsLogo.svg";
 import { FaBars } from "react-icons/fa";
 import { Link } from "react-router-dom";
@@ -17,7 +16,7 @@ const Nav = () => {
 		<NavContainer>
 			<div className='nav-center'>
 				<div className='nav-header'>
-					<Link to='/'>
+					<Link to='/' className='app-logo'>
 						<img src={sportsLogo} alt='comfy-sloth' />
 					</Link>
 					<button type='button' className='nav-toggle'>
@@ -56,6 +55,11 @@ const NavContainer = styled.nav`
 		margin: 0 auto;
 		max-width: var(--max-width);
 	}
+	@media screen and (max-width: 550px) {
+		.app-logo {
+			display: none;
+		}
+	}
 	.nav-header {
 		display: flex;
 		align-items: center;
@@ -70,6 +74,10 @@ const NavContainer = styled.nav`
 	.nav-toggle {
 		background: transparent;
 		border: transparent;
+		position: absolute;
+		right: 5px;
+		cursor: pointer;
+		z-index: 100;
 		color: var(--clr-primary-5);
 		cursor: pointer;
 		svg {

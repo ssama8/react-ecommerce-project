@@ -6,7 +6,6 @@ import { links } from "../utils/constants";
 import styled from "styled-components";
 import CartButtons from "./CartButtons";
 import { useUserContext } from "../context/user_context";
-import sportsLogo from "../assets/sidebar.svg";
 
 const Sidebar = () => {
 	const { myUser } = useUserContext();

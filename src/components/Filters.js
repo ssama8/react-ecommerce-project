@@ -2,20 +2,10 @@ import React from "react";
 import styled from "styled-components";
 import { useFilterContext } from "../context/filter_context";
 import { getUniqueValues, formatPrice } from "../utils/helpers";
-import { FaCheck } from "react-icons/fa";
 
 const Filters = () => {
 	const {
-		filters: {
-			text,
-			category,
-			company,
-			color,
-			maxPrice,
-			minPrice,
-			price,
-			shipping,
-		},
+		filters: { text, category, company, maxPrice, minPrice, price, shipping },
 		updateFilters,
 		clearFilters,
 		allProducts,
