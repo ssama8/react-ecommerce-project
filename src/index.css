@@ -135,6 +135,11 @@ p {
 /*  global classes */
 
 /* section */
+@media screen and (max-width: 768px) {
+	main {
+		min-height: calc(100vh - 10rem);
+	}
+}
 .section {
 	padding: 5rem 0;
 }
@@ -203,6 +208,16 @@ p {
 .page-100 {
 	min-height: calc(100vh - 10rem);
 	padding: 5rem 0;
+}
+
+@media screen and (max-width: 768px) {
+	.page-100 {
+		min-height: calc(100vh);
+		padding: 5rem 0;
+	}
+	.page {
+		min-height: calc(100vh);
+	}
 }
 .page {
 	min-height: calc(100vh - (10vh + 10rem));

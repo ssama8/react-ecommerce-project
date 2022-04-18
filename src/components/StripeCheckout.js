@@ -112,17 +112,20 @@ const CheckoutForm = () => {
 			)}
 
 			{!succeeded && <CartColumns />}
-			{!succeeded &&
-				cart.map((item) => {
-					return (
-						<CartItem
-							key={item.id}
-							{...item}
-							checkout={true}
-							className='cart-item'
-						/>
-					);
-				})}
+			{!succeeded && (
+				<section className='items'>
+					{cart.map((item) => {
+						return (
+							<CartItem
+								key={item.id}
+								{...item}
+								checkout={true}
+								className='cart-item'
+							/>
+						);
+					})}
+				</section>
+			)}
 
 			<form id='payment-form' onSubmit={handleSubmit} className='centered'>
 				<CardElement
@@ -176,6 +179,10 @@ export default StripeCheckout;
 
 const Wrapper = styled.section`
 	text-align: center;
+
+	.cart-item {
+		margin-top: 2rem;
+	}
 	form {
 		width: 30vw;
 		align-self: center;
@@ -187,6 +194,11 @@ const Wrapper = styled.section`
 	}
 	a {
 		margin: 2rem 0;
+	}
+	.items {
+		display: flex;
+		flex-direction: column;
+		justif-content: center;
 	}
 	span:hover {
 		cursor: pointer;
@@ -214,6 +226,7 @@ const Wrapper = styled.section`
 	.hidden {
 		display: none;
 	}
+
 	#card-error {
 		color: rgb(105, 115, 134);
 		font-size: 16px;

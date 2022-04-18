@@ -21,6 +21,9 @@ const Wrapper = styled.section`
 	min-height: 10vh;
 	display: flex;
 	align-items: center;
+	@media screen and (max-width: 768px) {
+		display: none;
+	}
 
 	color: var(--clr-primary-1);
 	a {
