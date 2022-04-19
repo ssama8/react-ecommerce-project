@@ -50,6 +50,13 @@ const NavContainer = styled.nav`
 	align-items: center;
 	justify-content: center;
 	background-color: #555;
+	@media screen and (max-width: 768px) {
+		background: white;
+		z-index: 10;
+		img {
+			display: none;
+		}
+	}
 	.nav-center {
 		width: 90vw;
 		margin: 0 auto;
@@ -75,7 +82,7 @@ const NavContainer = styled.nav`
 		background: transparent;
 		border: transparent;
 		position: absolute;
-		right: 5px;
+		right: 20px;
 		cursor: pointer;
 		z-index: 100;
 		color: var(--clr-primary-5);

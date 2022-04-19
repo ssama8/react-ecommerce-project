@@ -199,6 +199,7 @@ const Wrapper = styled.section`
 		display: flex;
 		flex-direction: column;
 		justif-content: center;
+		height: 500px;
 	}
 	span:hover {
 		cursor: pointer;
